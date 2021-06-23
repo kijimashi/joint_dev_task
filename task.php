@@ -45,21 +45,31 @@ $array1 = [];
 $array2 = [1, 5, 8, 10];
 
 # 以下に回答を記載
+$array1 = [];
+var_export(empty($array1));
+echo PHP_EOL;
 
+$array2 = [1, 2, 3];
+var_export(empty($array2));
 echo PHP_EOL;
 
 print("#####q6#####" . PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
 # 以下に回答を記載
-
+$numbers2 = [];
+foreach ($numbers1 as $number) {
+  $number *= 10;
+  array_push($numbers2, $number);
+}
+print_r($numbers2);
 echo PHP_EOL;
 
 print("#####q7#####" . PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
 # 以下に回答を記載
-
+$array = array_map('intval', $array);
 # 以下は変更しないで下さい
 var_dump($array);
 
@@ -69,22 +79,28 @@ print("#####q8#####" . PHP_EOL);
 $programming_languages = ["php", "ruby", "python", "javascript"];
 
 # 以下に回答を記載
-
+$programming_languages = array_map('ucfirst', $programming_languages);
+$upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 # 以下は変更しないで下さい
 print_r($programming_languages);
 echo PHP_EOL;
 print_r($upper_case_programming_languages);
-
 echo PHP_EOL;
 
 print("#####q9#####" . PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
 # 以下に回答を記載
-
+$names1 = [];
+foreach ($names as $key => $name) {
+  $number = $key + 1;
+  $names2 = "会員No." . $number . " " . $name;
+  array_push($names1, $names2);
+}
+print_r($names1);
 echo PHP_EOL;
 
-print("#####q10#####" . PHP_EOL);
+/*print("#####q10#####" . PHP_EOL);
 $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
 
 # 以下に回答を記載
@@ -213,7 +229,7 @@ $human4 = new Human("ぎん", 108);
 $humans = [$human1, $human2, $human3, $human4];
 
 foreach ($humans as $human) {
-  $zoo->info_entry_fee($human);
+  //$zoo->info_entry_fee($human);
 }
 
-echo PHP_EOL;
+echo PHP_EOL;*/
